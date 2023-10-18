@@ -1,0 +1,485 @@
+<html><head><title>MaxMod2.MaxMod2 reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>MaxMod2.MaxMod2:</b></td>
+<td class=small width=1%><a href=#functions class=small>Functions</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/maxmod2.mod/maxmod2.mod/maxmod2.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<center><p>
+<font size=42>MaxMod2</font size><br>
+<p>
+<TABLE BORDER="0" WIDTH=50%>
+<TR>
+<TD><center>
+<a href="http://code.google.com/p/maxmod" title="Goto Google Code"><image src="googlecode.gif" border="0" width=100% /></a>
+</center></TD>
+<TD><center>
+<a href="http://groups.google.com/group/maxmod" title="Goto Google Groups"><image src="googlegroups.gif" border=0 width=100% /></a>
+</center></TD>
+<TD><center>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="image" src="donate.gif" border="0" width=100% name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+</center></TD>
+</TR>
+</TABLE>
+<p>
+</center>
+<p>
+<h2>Constants</h2>
+<TABLE>
+<TR><TH><B>Constants</B></TH>  <TH><B>Description</B></TH></TR>
+<TR><TD>MM_BYTES</TD>          <TD>value passed represents number of bytes</TD> </TR>
+<TR><TD>MM_SAMPLES</TD>        <TD>value passed represents number of audio samples</TD> </TR>
+<TR><TD>MM_MILLISECS</TD>      <TD>value passed represents milliseconds</TD> </TR>
+<TR><TD>MM_SEQUENCE</TD>       <TD>value passed represents tracker sequence number</TD> </TR>
+<TR><TD>MM_LINE</TD>           <TD>value passed represents tracker line number</TD> </TR>
+<TR><TD>MM_TRACK</TD>          <TD>value passed represents a track number</TD> </TR>
+</TABLE><P>
+<h2><a name=functions></a>Functions Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#AddChannelEffect>AddChannelEffect</a></td><td class=docright>
+Add an effect filter to a channel.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ChannelSeek>ChannelSeek</a></td><td class=docright>
+Seek the audio to the given position, if available.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#ChannelSeekable>ChannelSeekable</a></td><td class=docright>
+Query if audio is seekable.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CreateAudioCallbackStream>CreateAudioCallbackStream</a></td><td class=docright>
+Start a new audio callback stream.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CreateMemoryStream>CreateMemoryStream</a></td><td class=docright>
+Streams music to memory using a thread.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#CueMusic>CueMusic</a></td><td class=docright>
+Cue a new music stream.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChannelLength>GetChannelLength</a></td><td class=docright>
+Returns the total length of audio.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChannelLoop>GetChannelLoop</a></td><td class=docright>
+Get the channels loop mode.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChannelPosition>GetChannelPosition</a></td><td class=docright>
+Retrieve the current stream position.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#GetChannelUV>GetChannelUV</a></td><td class=docright>
+Set the channels loop points.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LoadMusic>LoadMusic</a></td><td class=docright>
+Streams audio outputs to a TAudioSample for use with the BlitzMax LoadSound command.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MaxModVerbose>MaxModVerbose</a></td><td class=docright>
+Set the verbose debug mode for all maxmod modules.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#MusicExtensions>MusicExtensions</a></td><td class=docright>
+Query supported music formats for streaming.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#OutputWavFile>OutputWavFile</a></td><td class=docright>
+Stream audio output to file.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#PlayMusic>PlayMusic</a></td><td class=docright>
+Start a new music stream.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetAudioStreamDriver>SetAudioStreamDriver</a></td><td class=docright>
+Initialize MaxMods audio stream for playback.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetChannelLoop>SetChannelLoop</a></td><td class=docright>
+Set the channels loop mode.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetChannelLoopPoints>SetChannelLoopPoints</a></td><td class=docright>
+Set the channels loop points.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#SetGlobalVolume>SetGlobalVolume</a></td><td class=docright>
+Set the global volume.
+</td></tr>
+</table>
+<h2
+ id=functionsdet>Functions
+</h2>
+<table class=doc width=100% cellspacing=3 id=AddChannelEffect>
+<tr><td class=doctop colspan=2>Function AddChannelEffect:Int(channel:TChannel, effect:TMaxModEffect)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True if successfull.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Add an effect filter to a channel.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>channel</TD><TD>TChannel object to apply the effect with</TD></TR>
+<TR><TD>effect</TD><TD>TMaxModEffect filter object to apply to the channel</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ChannelSeek>
+<tr><td class=doctop colspan=2>Function ChannelSeek:Int(Channel:TChannel,Pos:Int,Mode:Int=MM_SAMPLES)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True if seeking was successful, else False.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Seek the audio to the given position, if available.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to perform seek on</TD></TR>
+<TR><TD>Pos</TD><TD>Position to seek too</TD></TR>
+<TR><TD>Mode</TD><TD>Format of the Pos value, can be either MM_SAMPLES, MM_BYTES or MM_MILLISECS<br>Defaults to MM_SAMPLES</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=ChannelSeek.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+
+Import MaxMod2.RtAudio
+Import MaxMod2.ModPlayer
+
+Graphics 320,240,0
+
+SetAudioStreamDriver "MaxMod RtAudio"
+'MaxModVerbose True
+
+Local file$ = RequestFile("",MusicExtensions())
+Local channel:TChannel = PlayMusic(file,True)
+If Not channel RuntimeError "unable to play file"
+
+Repeat
+	Cls
+
+	If KeyHit(KEY_SPACE) 
+		PauseChannel(channel)
+		ChannelSeek(channel,1,MM_SEQUENCE)
+		ChannelSeek(channel,32,MM_LINE)
+		ResumeChannel(channel)
+	EndIf
+
+	DrawText "    LENGTH: "+GetChannelLength(Channel,MM_SAMPLES),10,25
+	DrawText "  POSITION: "+GetChannelPosition(Channel,MM_MILLISECS),10,40
+	DrawText "  SEQUENCE: "+GetChannelPosition(Channel,MM_SEQUENCE)+"/"+GetChannelLength(Channel,MM_SEQUENCE),10,55
+	DrawText "      LINE: "+GetChannelPosition(Channel,MM_LINE),10,70
+	DrawText "   PLAYING: "+ChannelPlaying(Channel),10,85
+
+	Flip
+Until KeyHit(KEY_ESCAPE) Or AppTerminate()</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=ChannelSeekable>
+<tr><td class=doctop colspan=2>Function ChannelSeekable:Int(Channel:TChannel)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True if seekable, else False.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Query if audio is seekable.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=CreateAudioCallbackStream>
+<tr><td class=doctop colspan=2>Function CreateAudioCallbackStream:TChannel(Music:TCustomMusic,Loop:Int=False,Paused:Int=False)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A TChannel object.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Start a new audio callback stream.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Music</TD><TD>A TCustomMusic object to use for audio stream</TD></TR>
+<TR><TD>Loop</TD><TD>True to loop the stream forever<BR>False to play the stream only once (defaults to False)</TD></TR>
+<TR><TD>Paused</TD><TD>True to create the stream in a paused state<BR>False to start playback on creation of the stream (defaults to False)</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=CreateMemoryStream>
+<tr><td class=doctop colspan=2>Function CreateMemoryStream:TChannel(URL:Object,buf:Byte Ptr)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A TChannel object.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Streams music to memory using a thread.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>URL</TD><TD>URL to the audio you want to stream</TD></TR>
+<TR><TD>buf</TD><TD>a pointer to the memory where to write</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=CreateMemoryStream.bmx class=small>Example</a></td><td class=docright><pre>' example of non-blocking audio sample loading (threaded stream to memory)
+' audio playback is via freeaudio and no maxmod audio driver is required,
+' but if you do use the MaxMod2 audio driver you can start playback straightaway 
+' as MaxMod plays directly from the audio sample data ;)
+
+SuperStrict
+
+Framework BRL.FreeAudioAudio
+Import MaxMod2.ModPlayer
+Import MaxMod2.Flac
+Import MaxMod2.OGG
+Import MaxMod2.WAV
+Import MaxMod2.RtAudio
+
+MaxModVerbose True
+SetAudioDriver "MaxMod RtAudio"
+
+Print "Loading Music..."
+Global Music:TMusic = LoadTMusic(RequestFile("",MusicExtensions()))
+If Not Music RuntimeError "Unable to open file"
+
+Print "Creating sample"
+Local sample:TAudioSample = CreateAudioSample(Music.GetLength(MM_SAMPLES), Music.GetSampleRate(), Music.GetFormat() )
+
+Print "Streaming audio into memory (non blocking)"
+Local stream:TChannel = CreateMemoryStream(Music,Sample.Samples)
+
+' wait for loading to complete
+'Repeat
+'	Delay 100
+'	StandardIOStream.WriteString(".")
+'	StandardIOStream.Flush()
+'Until Not ChannelPlaying(stream)
+'StandardIOStream.WriteString("Complete~n")
+Local working%=1
+
+Print "Playing!"
+Local Sound:TSound = LoadSound(sample,SOUND_LOOP)
+Global Channel:TChannel = PlaySound(sound)
+
+Repeat
+	If working And Not ChannelPlaying(stream) ; Print "Streaming complete" ; working=0
+	PollSystem()
+	Delay 10
+Until Not ChannelPlaying(Channel)</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=CueMusic>
+<tr><td class=doctop colspan=2>Function CueMusic:TChannel(URL:Object,Loop:Int=False)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A TChannel object.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Cue a new music stream.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>URL</TD><TD>URL to the audio you want to stream</TD></TR>
+<TR><TD>Loop</TD><TD>True to loop the stream forever<BR>False to play the stream only once (defaults to False)</TD></TR>
+<TR><TD>Paused</TD><TD>True to create the stream in a paused state<BR>False to start playback on creation of the stream (defaults to False)</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=CueMusic.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+Import MaxMod2.RtAudio
+Import MaxMod2.Ogg
+Import MaxMod2.Flac
+Import MaxMod2.ModPlayer
+Import MaxMod2.Wav
+
+SetAudioStreamDriver("MaxMod RtAudio")
+'MaxModVerbose True
+
+Local file$ = RequestFile( "", MusicExtensions() )
+Local Channel:TChannel = CueMusic( file )
+If Not Channel RuntimeError("Unable to cue music")
+ResumeChannel(Channel)
+
+Repeat
+	Delay 10
+	PollSystem()
+Until ChannelPlaying(Channel)=False</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=GetChannelLength>
+<tr><td class=doctop colspan=2>Function GetChannelLength:Int(Channel:TChannel,Mode:Int=MM_SAMPLES)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Returns the total length of audio.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to retrieve length from</TD></TR>
+<TR><TD>Mode</TD><TD>Format of the length returned, can be either MM_SAMPLES, MM_BYTES or MM_MILLISECS<br>Defaults to MM_SAMPLES</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=GetChannelLoop>
+<tr><td class=doctop colspan=2>Function GetChannelLoop:Int(Channel:TChannel)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>True if the audio is in looping mode, else False.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Get the channels loop mode.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=GetChannelPosition>
+<tr><td class=doctop colspan=2>Function GetChannelPosition:Int(Channel:TChannel,Mode:Int=MM_SAMPLES)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Retrieve the current stream position.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to retrieve position from</TD></TR>
+<TR><TD>Mode</TD><TD>Format of the returned position, can be either MM_SAMPLES, MM_BYTES or MM_MILLISECS<br>Defaults to MM_SAMPLES</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=GetChannelUV>
+<tr><td class=doctop colspan=2>Function GetChannelUV(Channel:TChannel,L:Double Var, R:Double Var)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the channels loop points.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to change loop point on</TD></TR>
+<TR><TD>Start</TD><TD>Position in samples to start loop at</TD></TR>
+<TR><TD>EndSample</TD><TD>Position in samples to end loop at</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=GetChannelUV.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+
+Import MaxMod2.RtAudio
+Import MaxMod2.ModPlayer
+Import MaxMod2.OGG
+Import MaxMod2.FLAC
+Import MaxMod2.WAV
+
+SetAudioStreamDriver("MaxMod RtAudio")
+'MaxModVerbose True
+
+Graphics 30,200,0
+
+Local Channel:TChannel = PlayMusic(RequestFile("",MusicExtensions()))
+If Not Channel RuntimeError "no channel?"
+
+Local L!,R!
+Repeat
+
+	Cls
+
+	GetChannelUV(Channel,L,R)
+
+	SetColor(100,100,150)
+	DrawRect(5,5,10,190)
+	DrawRect(20,5,10,190)
+
+	SetColor(255,255,255)
+	DrawRect(5,195-(190*L),10,190*L)
+	DrawRect(20,195-(190*R),10,190*R)
+
+	Flip
+
+Until ChannelPlaying(Channel)=0 Or AppTerminate() Or KeyHit(KEY_ESCAPE)</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=LoadMusic>
+<tr><td class=doctop colspan=2>Function LoadMusic:TAudioSample( URL:String )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A TAudioSample object.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Streams audio outputs to a TAudioSample for use with the BlitzMax LoadSound command.</td></tr>
+<tr><td class=docleft width=1%><a href=LoadMusic.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+Import MaxMod2.Ogg
+Import MaxMod2.Flac
+Import MaxMod2.ModPlayer
+Import MaxMod2.Wav
+
+'MaxModVerbose True
+
+Print "Loading Music..."
+Local file$ = RequestFile( "Choose an audio file to load", MusicExtensions() )
+Local Sample:TAudioSample = LoadMusic( file )
+If Not Sample RuntimeError("Unable to load music")
+Print "Complete"
+
+Local Sound:TSound = LoadSound(Sample)
+If Not Sample RuntimeError("Unable to load sound")
+Local Channel:TChannel = PlaySound(sound)
+
+Repeat
+	Delay 10
+	PollSystem()
+Until ChannelPlaying(Channel)=False</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=MaxModVerbose>
+<tr><td class=doctop colspan=2>Function MaxModVerbose(bool:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the verbose debug mode for all maxmod modules.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>Calling this function with a value of True will cause maxmod to spew debug infomation during execution.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=MusicExtensions>
+<tr><td class=doctop colspan=2>Function MusicExtensions:String(AllSupported:Int=True,AllFiles:Int=True)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>a string for use with RequestFile() ect.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Query supported music formats for streaming.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>AllSupported</TD><TD>adds an "all supported" item to the filter list</TD></TR>
+<TR><TD>AllFiles</TD><TD>adds an "all files" item to the filter list</TD></TR>
+<TR><TD></TD><TD></TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=MusicExtensions.bmx class=small>Example</a></td><td class=docright><pre>Import MaxMod2.Ogg
+Import MaxMod2.Flac
+
+Local file$ = RequestFile( "", MusicExtensions() )</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=OutputWavFile>
+<tr><td class=doctop colspan=2>Function OutputWavFile:TChannel(source:Object, destination:Object)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Stream audio output to file.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Volume</TD><TD>Volume to be applied to all audio output, <br>0=silent, 0.5=half, 1=normal, 2=double etc</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=PlayMusic>
+<tr><td class=doctop colspan=2>Function PlayMusic:TChannel(URL:Object,Loop:Int=False)</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A TChannel object.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Start a new music stream.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>URL</TD><TD>URL to the audio you want to stream</TD></TR>
+<TR><TD>Loop</TD><TD>True to loop the stream forever<BR>False to play the stream only once (defaults to False)</TD></TR>
+<TR><TD>Paused</TD><TD>True to create the stream in a paused state<BR>False to start playback on creation of the stream (defaults to False)</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=PlayMusic.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+Import MaxMod2.RtAudio
+Import MaxMod2.Ogg
+Import MaxMod2.Flac
+Import MaxMod2.ModPlayer
+Import MaxMod2.Wav
+
+SetAudioStreamDriver("MaxMod RtAudio")
+'MaxModVerbose True
+
+Local file$ = RequestFile( "", MusicExtensions() )
+Local Channel:TChannel = PlayMusic( file )
+If Not Channel RuntimeError("Unable to cue music")
+
+Repeat
+	Delay 10
+	PollSystem()
+Until ChannelPlaying(Channel)=False</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=SetAudioStreamDriver>
+<tr><td class=doctop colspan=2>Function SetAudioStreamDriver(name$)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Initialize MaxMods audio stream for playback.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>You can use this function to start an audio stream driver without using it for sample playback, allowing you to still use other audio drivers and still take advantage of maxmod2 audio streaming.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=SetChannelLoop>
+<tr><td class=doctop colspan=2>Function SetChannelLoop(Channel:TChannel,Bool:Int=True)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the channels loop mode.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to set looping mode on</TD></TR>
+<TR><TD>Bool</TD><TD>True to enable looping on this channel, False to disable it</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=SetChannelLoopPoints>
+<tr><td class=doctop colspan=2>Function SetChannelLoopPoints(Channel:TChannel,Start:Int,Length:Int)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the channels loop points.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Channel</TD><TD>Channel to change loop point on</TD></TR>
+<TR><TD>Start</TD><TD>Position in samples to start loop at</TD></TR>
+<TR><TD>EndSample</TD><TD>Position in samples to end loop at</TD></TR>
+</TABLE><P></td></tr>
+<tr><td class=docleft width=1%><a href=SetChannelLoopPoints.bmx class=small>Example</a></td><td class=docright><pre>SuperStrict
+Import MaxMod2.RtAudio
+
+SetAudioDriver("MaxMod RtAudio")
+'MaxModVerbose True
+
+Local Sound:TSound = LoadSound(RequestFile( "", "ogg,wav" ))
+If Not Sound RuntimeError "Unable to load sound sound"
+
+Local Channel:TChannel = CueSound(Sound)
+If Not Channel RuntimeError "No channel?"
+
+SetChannelLoopPoints(Channel,15000,30000)
+SetChannelLoop(Channel,True)
+ResumeChannel(Channel)
+
+Repeat
+	Delay 10
+	PollSystem()
+Until ChannelPlaying(Channel)=False Or KeyHit(KEY_ESCAPE)</pre></td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=SetGlobalVolume>
+<tr><td class=doctop colspan=2>Function SetGlobalVolume(Volume:Double)</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Set the global volume.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright><TABLE>
+<TR><TH><B>Parameters:</B></TH><TH>Description:</TH></TR>
+<TR><TD>Volume</TD><TD>Volume to be applied to all audio output, <br>0=silent, 0.5=half, 1=normal, 2=double etc</TD></TR>
+</TABLE><P></td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>MaxMod2</th><td>Audio Driver V1.0</td></tr>
+<tr><th width=1%>Author</th><td>REDi - Cliff Harman</td></tr>
+<tr><th width=1%>License</th><td>MIT</td></tr>
+</body></html>
