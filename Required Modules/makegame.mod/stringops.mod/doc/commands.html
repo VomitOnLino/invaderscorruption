@@ -1,0 +1,172 @@
+<html><head><title>BASIC/BASIC compatibility reference</title>
+<link rel=stylesheet Type=text/css href='../../../../doc/bmxstyle.css'>
+</head><body>
+<table width=100% cellspacing=0><tr align=center><td class=small>&nbsp;</td>
+<td class=small width=1%><b>MakeGame.StringOps:</b></td>
+<td class=small width=1%><a href=#functions class=small>Functions</a></td>
+<td class=small width=1%><a href=#modinfo class=small>Modinfo</a></td>
+<td class=small width=1%><a href='../../../../mod/makegame.mod/stringops.mod/stringops.bmx' class=small>Source</a></td>
+<td class=small>&nbsp;</td></tr></table>
+<h1>BASIC/BASIC compatibility</h1>
+<h2><a name=functions></a>Functions Summary</h2><table class=doc width=100%>
+<tr><td class=docleft width=1%><a href=#Bin>Bin</a></td><td class=docright>
+Convert an integer value to a binary string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Hex>Hex</a></td><td class=docright>
+Convert an integer value to a hexadecimal string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Instr>Instr</a></td><td class=docright>
+Find a string within a string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Left>Left</a></td><td class=docright>
+Extract characters from the beginning of a string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LongBin>LongBin</a></td><td class=docright>
+Convert a 64 bit long integer value to a binary string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LongHex>LongHex</a></td><td class=docright>
+Convert a 64 bit long integer value to a hexadecimal string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Lower>Lower</a></td><td class=docright>
+Convert string to lowercase.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#LSet>LSet</a></td><td class=docright>
+Left justify string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Mid>Mid</a></td><td class=docright>
+Extract substring from a string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Replace>Replace</a></td><td class=docright>
+Performs a search and replace function.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Right>Right</a></td><td class=docright>
+Extract characters from the end of a string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#RSet>RSet</a></td><td class=docright>
+Right justify string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Trim>Trim</a></td><td class=docright>
+Remove unprintable characters from ends a string.
+</td></tr>
+<tr><td class=docleft width=1%><a href=#Upper>Upper</a></td><td class=docright>
+Convert string to uppercase.
+</td></tr>
+</table>
+<h2
+ id=functionsdet>Functions
+</h2>
+<table class=doc width=100% cellspacing=3 id=Bin>
+<tr><td class=doctop colspan=2>Function Bin$( val )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>The binary string representation of <b>val</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert an integer value to a binary string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Hex>
+<tr><td class=doctop colspan=2>Function Hex$( val )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>The hexadecimal string representation of <b>val</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert an integer value to a hexadecimal string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Instr>
+<tr><td class=doctop colspan=2>Function Instr( str$,sub$,start=1 )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>The position within <b>str</b> of the first matching occurance of <b>sub</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Find a string within a string.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The <b>start</b> parameter allows you to specifying a starting index for the search.
+<p>
+For compatiblity with classic BASIC, the <b>start</b> parameter and returned position
+are both 'one based'.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Left>
+<tr><td class=doctop colspan=2>Function Left$( str$,n )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright><b>size</b> leftmost characers of <b>str</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Extract characters from the beginning of a string.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The Left$ command returns a substring of a String.
+Given an existing String and a <b>size</b>, Left$ returns the first <b>size</b>
+characters from the start of the String in a new String.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=LongBin>
+<tr><td class=doctop colspan=2>Function LongBin$( val:Long )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>The binary string representation of <b>val</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert a 64 bit long integer value to a binary string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=LongHex>
+<tr><td class=doctop colspan=2>Function LongHex$( val:Long )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>The hexadecimal string representation of <b>val</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert a 64 bit long integer value to a hexadecimal string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Lower>
+<tr><td class=doctop colspan=2>Function Lower$( str$ )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>Lowercase equivalent of <b>str</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert string to lowercase.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=LSet>
+<tr><td class=doctop colspan=2>Function LSet$( str$,n )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A string of length <b>n</b>, padded with spaces.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Left justify string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Mid>
+<tr><td class=doctop colspan=2>Function Mid$( str$,pos,size=-1 )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A sequence of characters from <b>str</b> starting at position <b>pos</b> and of length <b>size</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Extract substring from a string.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The Mid$ command returns a substring of a String.
+<p>
+Given an existing string, a <b>position</b> from the start of the string and
+an optional <b>size</b>, <a href=#Mid>Mid</a> creates a new string equal to the section specified.
+If no size if given, <a href=#Mid>Mid</a> returns the characters in the existing string from
+<b>position</b> to the end of the string.
+<p>
+For compatibility with classic BASIC, the <b>pos</b> parameter is 'one based'.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Replace>
+<tr><td class=doctop colspan=2>Function Replace$( str$,sub$,replaceWith$ )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A string with all instances of <b>sub</b>$ replaced by <b>replace</b>$</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Performs a search and replace function.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The Replace$ command replaces all instances of one string with another.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Right>
+<tr><td class=doctop colspan=2>Function Right$( str$,n )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright><b>size</b> rightmost characters of <b>str</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Extract characters from the end of a string.</td></tr>
+<tr><td class=docleft width=1%>Information</td><td class=docright>The Right$ command returns a substring of a String.
+Given an existing String and a <b>size</b>, Right$ returns the last <b>size</b>
+characters from the end of the String.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=RSet>
+<tr><td class=doctop colspan=2>Function RSet$( str$,n )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>A string of length <b>n</b>, padded with spaces.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Right justify string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Trim>
+<tr><td class=doctop colspan=2>Function Trim$( str$ )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright><b>str</b> with leading and trailing unprintable characters removed.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Remove unprintable characters from ends a string.</td></tr>
+</table>
+<br>
+<table class=doc width=100% cellspacing=3 id=Upper>
+<tr><td class=doctop colspan=2>Function Upper$( str$ )</td></tr>
+<tr><td class=docleft width=1%>Returns</td><td class=docright>Uppercase equivalent of <b>str</b>.</td></tr>
+<tr><td class=docleft width=1%>Description</td><td class=docright>Convert string to uppercase.</td></tr>
+</table>
+<br>
+<h2 id=modinfo>Module Information</h2>
+<table width=100%>
+<tr><th width=1%>Version</th><td>1.09</td></tr>
+<tr><th width=1%>Author</th><td>Mark Sibly</td></tr>
+<tr><th width=1%>License</th><td>Blitz Shared Source Code</td></tr>
+<tr><th width=1%>Copyright</th><td>Blitz Research Ltd</td></tr>
+<tr><th width=1%>Modserver</th><td>BRL</td></tr>
+<tr><th width=1%>History</th><td>1.09 Release</td></tr>
+<tr><th width=1%>History</th><td>Cleaned up Mid$</td></tr>
+<tr><th width=1%>History</th><td>1.08 Release</td></tr>
+<tr><th width=1%>History</th><td>Deleted network stuff</td></tr>
+</body></html>
