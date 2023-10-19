@@ -1,5 +1,3 @@
-# invaderscorruption
-
 INVADERS CORRUPTION:
 -----------------------
 Invaders Corruption is a procedurally generated, freeware areana shooter for Windows, MacOS and Linux written in BlitzBasic and C.
