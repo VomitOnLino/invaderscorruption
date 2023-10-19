@@ -1,4 +1,4 @@
-INVADERS CORRUPTION:
+INVADERS CORRUPTION
 -----------------------
 Invaders Corruption is a procedurally generated, freeware areana shooter for Windows, MacOS and Linux written in BlitzBasic and C.
 
@@ -14,7 +14,7 @@ It includes:
 - The music which has been created by Carlo Castellano
 
 
-OTHER POINTS OF NOTE:
+OTHER POINTS OF NOTE
 ----------------------
 The "data.big" data-file is just a ZIP file with a password (visible within the source-code) and the initial bytes changed to obfuscate the ZIP format.
 
@@ -23,7 +23,7 @@ The web-server is defunct and not part of this release for security reasons. If 
 I want to express thanks to Carlo Castellano and John Nesky, who contributed to this project for free - as well as all the beta testers, TigSource and anyone else who helped!
 
 
-CLOSING
+IN CLOSING
 -------
 If you find anything that does not belong or is not open source or otherwise problematic, please contact me and I shall take it down.
 
